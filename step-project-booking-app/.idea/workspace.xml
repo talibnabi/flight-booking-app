@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89b3cc68-f4b8-423b-95bd-703928dc1346" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/enumeration/abstracts/FileDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enumeration/concretes/file/BookingFileDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enumeration/concretes/file/FlightFileDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enumeration/concretes/file/PassengerFileDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enumeration/concretes/file/UserFileDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/FileDAOUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/concretes/BookingDAOManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/concretes/BookingDAOManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/FileDAOUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/FileDAOUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +40,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Workspace/abbTech/step-project-booking-app/src/ui/abstracts"
+    "last_opened_file_path": "C:/Workspace/flight-booking-app/step-project-booking-app"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -147,6 +141,7 @@
       <workItem from="1663192428712" duration="6346000" />
       <workItem from="1663204582242" duration="2571000" />
       <workItem from="1663311560276" duration="28237000" />
+      <workItem from="1663351211500" duration="367000" />
     </task>
     <servers />
   </component>

@@ -3,23 +3,25 @@ package dao.concretes;
 import dao.abstracts.DAO;
 import entity.Booking;
 import enumeration.concretes.data.BookingDataSource;
+import enumeration.concretes.file.BookingFileDAO;
 import enumeration.concretes.file.FilePathAccess;
-import file.concretes.WorkingWithFile;
 
 import java.util.Collection;
 import java.util.Optional;
-
-import static util.FileDAOUtil.workingWithFileBooking;
 
 
 public class BookingDAOManager implements DAO<Booking> {
 
     @Override
     public Optional<Collection<Booking>> getAll() {
-        return Optional.ofNullable(workingWithFileBooking
-                .readListFromFile(FilePathAccess
-                        .BOOKING_DATA
-                        .getFilePath()));
+        return Optional.ofNullable(
+                BookingFileDAO
+                        .BOOKING_FILE_ACCESS
+                        .constructor()
+                        .get()
+                        .readListFromFile(FilePathAccess
+                                .BOOKING_DATA
+                                .getFilePath()));
     }
 
     @Override
@@ -46,7 +48,10 @@ public class BookingDAOManager implements DAO<Booking> {
 
     @Override
     public Boolean writeToFile() {
-        return workingWithFileBooking
+        return BookingFileDAO
+                .BOOKING_FILE_ACCESS
+                .constructor()
+                .get()
                 .writeListToFile(
                         FilePathAccess
                                 .BOOKING_DATA

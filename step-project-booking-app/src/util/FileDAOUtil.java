@@ -10,5 +10,5 @@ import file.concretes.WorkingWithFileForID;
 
 public class FileDAOUtil {
     public static final FileWorkingID workingWithFileForID = new WorkingWithFileForID();
-    
+
 }
