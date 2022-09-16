@@ -8,4 +8,7 @@ import java.util.Optional;
 public interface FlightService {
     Optional<List<Flight>> getAllFlights();
 
+    Optional<List<Flight>> booking();
+
+    Flight getFlight();
 }
