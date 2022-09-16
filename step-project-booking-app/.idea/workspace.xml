@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89b3cc68-f4b8-423b-95bd-703928dc1346" name="Changes" comment="" />
+    <list default="true" id="89b3cc68-f4b8-423b-95bd-703928dc1346" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,9 +12,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -37,7 +39,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Workspace/flight-booking-app/step-project-booking-app"
+    "last_opened_file_path": "C:/Workspace/step-project-booking-flight"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -138,7 +140,7 @@
       <workItem from="1663192428712" duration="6346000" />
       <workItem from="1663204582242" duration="2571000" />
       <workItem from="1663311560276" duration="28237000" />
-      <workItem from="1663351211500" duration="3861000" />
+      <workItem from="1663351211500" duration="4928000" />
     </task>
     <servers />
   </component>
