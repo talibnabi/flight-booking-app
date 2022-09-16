@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89b3cc68-f4b8-423b-95bd-703928dc1346" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/dao/concretes/UserDAOManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/concretes/UserDAOManager.java" afterDir="false" />
-    </list>
+    <list default="true" id="89b3cc68-f4b8-423b-95bd-703928dc1346" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,7 +138,7 @@
       <workItem from="1663192428712" duration="6346000" />
       <workItem from="1663204582242" duration="2571000" />
       <workItem from="1663311560276" duration="28237000" />
-      <workItem from="1663351211500" duration="3489000" />
+      <workItem from="1663351211500" duration="3861000" />
     </task>
     <servers />
   </component>
