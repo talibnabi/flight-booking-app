@@ -2,10 +2,8 @@ package dao.concretes;
 
 import dao.abstracts.DAO;
 import entity.User;
-import enumeration.concretes.data.PassengerDataSource;
 import enumeration.concretes.data.UserDataSource;
 import enumeration.concretes.file.FilePathAccess;
-import enumeration.concretes.file.PassengerFileWorker;
 import enumeration.concretes.file.UserFileWorker;
 
 import java.util.Collection;

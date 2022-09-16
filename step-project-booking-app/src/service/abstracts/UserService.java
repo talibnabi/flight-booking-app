@@ -9,5 +9,5 @@ public interface UserService {
 
     Boolean signUp(User user);
 
-
+    Boolean checking(String username);
 }

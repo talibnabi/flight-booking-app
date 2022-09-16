@@ -16,4 +16,9 @@ public class UserServiceManager implements UserService {
     public Boolean signUp(User user) {
         return null;
     }
+
+    @Override
+    public Boolean checking(String username) {
+        return null;
+    }
 }
