@@ -3,7 +3,7 @@ package dao.concretes;
 import dao.abstracts.DAO;
 import entity.Booking;
 import enumeration.concretes.data.BookingDataSource;
-import enumeration.concretes.file.BookingFileDAO;
+import enumeration.concretes.file.BookingFileWorker;
 import enumeration.concretes.file.FilePathAccess;
 
 import java.util.Collection;
@@ -15,7 +15,7 @@ public class BookingDAOManager implements DAO<Booking> {
     @Override
     public Optional<Collection<Booking>> getAll() {
         return Optional.ofNullable(
-                BookingFileDAO
+                BookingFileWorker
                         .BOOKING_FILE_ACCESS
                         .constructor()
                         .get()
@@ -48,7 +48,7 @@ public class BookingDAOManager implements DAO<Booking> {
 
     @Override
     public Boolean writeToFile() {
-        return BookingFileDAO
+        return BookingFileWorker
                 .BOOKING_FILE_ACCESS
                 .constructor()
                 .get()

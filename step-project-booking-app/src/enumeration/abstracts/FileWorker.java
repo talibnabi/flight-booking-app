@@ -4,6 +4,6 @@ import file.concretes.WorkingWithFile;
 
 import java.util.function.Supplier;
 
-public interface FileDAO<T> {
+public interface FileWorker<T> {
     Supplier<WorkingWithFile<T>> constructor();
 }
