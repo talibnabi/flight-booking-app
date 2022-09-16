@@ -14,12 +14,24 @@ import java.util.Optional;
 public class UserDAOManager implements DAO<User> {
     @Override
     public Optional<Collection<User>> getAll() {
-        return Optional.empty();
+        return Optional.ofNullable(
+                UserFileWorker
+                        .USER_FILE_WORKER
+                        .constructor()
+                        .get()
+                        .readListFromFile(FilePathAccess
+                                .USER_DATA
+                                .getFilePath()));
     }
 
     @Override
     public Boolean create(User data) {
-        return true;
+        UserDataSource
+                .USER_DATA_SOURCE
+                .constructor()
+                .get()
+                .add(data);
+        return writeToFile();
     }
 
     @Override
