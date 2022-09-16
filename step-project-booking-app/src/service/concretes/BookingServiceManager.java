@@ -1,4 +1,6 @@
 package service.concretes;
 
-public class BookingServiceManager {
+import service.abstracts.BookingService;
+
+public class BookingServiceManager implements BookingService {
 }
