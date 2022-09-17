@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89b3cc68-f4b8-423b-95bd-703928dc1346" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/enumeration/abstracts/DAOWorker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enumeration/concretes/service/BookingDAOServiceWorker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enumeration/concretes/service/FlightDAOServiceWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/concretes/BookingDAOManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/concretes/BookingDAOManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/concretes/FlightDAOManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/concretes/FlightDAOManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/concretes/UserDAOManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/concretes/UserDAOManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +143,7 @@
       <workItem from="1663204582242" duration="2571000" />
       <workItem from="1663311560276" duration="28237000" />
       <workItem from="1663351211500" duration="5954000" />
-      <workItem from="1663402959754" duration="1140000" />
+      <workItem from="1663402959754" duration="1442000" />
     </task>
     <servers />
   </component>

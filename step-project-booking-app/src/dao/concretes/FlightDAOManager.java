@@ -12,52 +12,23 @@ import java.util.Optional;
 public class FlightDAOManager implements DAO<Flight> {
     @Override
     public Optional<Collection<Flight>> getAll() {
-        return Optional.ofNullable(
-                FlightFileWorker
-                        .FLIGHT_FILE_ACCESS
-                        .constructor()
-                        .get()
-                        .readListFromFile(FilePathAccess
-                                .FLIGHT_DATA
-                                .getFilePath()));
+        return Optional.ofNullable(FlightFileWorker.FLIGHT_FILE_ACCESS.constructor().get().readListFromFile(FilePathAccess.FLIGHT_DATA.getFilePath()));
     }
 
     @Override
     public Boolean create(Flight data) {
-        FlightDataSource
-                .FLIGHT_DATA_SOURCE
-                .constructor()
-                .get()
-                .add(data);
+        FlightDataSource.FLIGHT_DATA_SOURCE.constructor().get().add(data);
         return writeToFile();
     }
 
     @Override
     public Boolean deleteFromFile(int id) {
-        FlightDataSource
-                .FLIGHT_DATA_SOURCE
-                .constructor()
-                .get()
-                .removeIf(
-                        flight -> id == flight.getId()
-                );
+        FlightDataSource.FLIGHT_DATA_SOURCE.constructor().get().removeIf(flight -> id == flight.getId());
         return writeToFile();
     }
 
     @Override
     public Boolean writeToFile() {
-        return FlightFileWorker
-                .FLIGHT_FILE_ACCESS
-                .constructor()
-                .get()
-                .writeListToFile(
-                        FilePathAccess
-                                .FLIGHT_DATA
-                                .getFilePath(),
-                        FlightDataSource
-                                .FLIGHT_DATA_SOURCE
-                                .constructor()
-                                .get()
-                );
+        return FlightFileWorker.FLIGHT_FILE_ACCESS.constructor().get().writeListToFile(FilePathAccess.FLIGHT_DATA.getFilePath(), FlightDataSource.FLIGHT_DATA_SOURCE.constructor().get());
     }
 }
