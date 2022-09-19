@@ -2,6 +2,7 @@ package util;
 
 import console.concretes.NoticeManager;
 import exception.UserMenuValueNotFoundException;
+import exception.UserPasswordDoesntMatcherException;
 
 public class MenuUtil {
     public static final NoticeManager noticeManager = new NoticeManager();
@@ -11,9 +12,13 @@ public class MenuUtil {
         return noticeManager.readline();
     }
 
-    public static String password() {
+    public static String password() throws UserPasswordDoesntMatcherException {
         noticeManager.print("Password: ");
-        return noticeManager.readline();
+        String password = noticeManager.readline();
+        if (password.length() < 8) {
+            throw new UserPasswordDoesntMatcherException("Password must be minimum 8 element.Please try again....");
+        }
+        return password;
     }
 
     public static String checking() throws UserMenuValueNotFoundException {

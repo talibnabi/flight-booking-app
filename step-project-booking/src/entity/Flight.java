@@ -90,6 +90,6 @@ public class Flight implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("| %s | %s | %s | %s --> %s | %s USD | %s %s|", id, getTicket().getTicketNumber(), airline.getAirlineName(), startingLocation.getAirportLocation(), stoppingLocation.getAirportLocation(), ticket.getTicketPrice(), flightTime, time);
+        return String.format(" ||  %2s  ||  %2s  ||  %2s  ||  %s --> %s  ||  %2s USD  ||  %s %s  || ", id, getTicket().getTicketNumber(), airline.getAirlineName(), startingLocation.getAirportLocation(), stoppingLocation.getAirportLocation(), ticket.getTicketPrice(), flightTime, time);
     }
 }
