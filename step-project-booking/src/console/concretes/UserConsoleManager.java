@@ -8,7 +8,7 @@ public class UserConsoleManager implements UserConsole {
     private final UserUIPage userUIPage = new UserUIPage();
 
     @Override
-    public void showUserInfo() {
+    public void showUserInterface() {
         noticeManager.print(userUIPage.showInterface());
     }
 }

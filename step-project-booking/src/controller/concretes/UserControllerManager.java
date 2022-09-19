@@ -20,7 +20,6 @@ public class UserControllerManager implements LoginController, RegisterControlle
     @Override
     public Boolean register(String username, String password) {
         if (userServiceManager.checkUsername(username)) {
-            noticeManager.print("User already exists.");
             return false;
         } else {
             User user = new User(username, password);

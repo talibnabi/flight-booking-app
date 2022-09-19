@@ -8,7 +8,7 @@ import java.util.List;
 public interface FlightController {
     void fillFlight();
 
-    List<Flight> showAllFlight();
+    void showAllFlight();
 
-    Flight showFlightById(int id);
+    void showFlightById(int id);
 }

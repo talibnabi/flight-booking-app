@@ -2,6 +2,7 @@ package dao.concretes;
 
 import dao.abstracts.BookingDAO;
 import dao.abstracts.DAO;
+import entity.Flight;
 import file.abstracts.FilePath;
 import entity.Booking;
 import file.abstracts.FileWorking;
@@ -26,7 +27,9 @@ public class BookingDAOManager implements BookingDAO<Booking>, FilePath<Booking>
 
     @Override
     public Boolean create(Booking object) {
-        return new ArrayList<>(getAll().orElseThrow()).add(object);
+        List<Booking> bookingList = new ArrayList<>(getAll().orElseThrow());
+        bookingList.add(object);
+        return fileWorking.writeListToFile(getFilePath(), bookingList);
     }
 
     @Override

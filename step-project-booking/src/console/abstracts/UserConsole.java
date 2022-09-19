@@ -1,5 +1,5 @@
 package console.abstracts;
 
 public interface UserConsole {
-    void showUserInfo();
+    void showUserInterface();
 }
