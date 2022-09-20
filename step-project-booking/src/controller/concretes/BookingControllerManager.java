@@ -1,6 +1,7 @@
 package controller.concretes;
 
 import controller.abstracts.BookingController;
+import entity.Booking;
 import service.concretes.BookingServiceManager;
 
 public class BookingControllerManager implements BookingController {
@@ -19,5 +20,10 @@ public class BookingControllerManager implements BookingController {
     @Override
     public void cancelBookingById(int id) {
         bookingServiceManager.delete(id);
+    }
+
+    @Override
+    public Boolean createBooking(Booking booking) {
+        return bookingServiceManager.create(booking);
     }
 }

@@ -55,7 +55,7 @@ public class FlightBookingMenuManager implements FlightBookingMenu {
                     noticeManager.print("Make your choice: ");
                     String id = noticeManager.readline();
                     List<Flight> flights1 = flights.stream().filter(flightx -> flightx.getId() == Integer.parseInt(id)).toList();
-                    flights1.forEach(System.out::println);
+
                     break;
                 case "4":
                     break;
