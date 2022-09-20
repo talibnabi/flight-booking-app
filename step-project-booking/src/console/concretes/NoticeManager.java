@@ -4,8 +4,9 @@ import console.abstracts.Notice;
 
 import java.util.Scanner;
 
+import static util.MenuUtil.scanner;
+
 public class NoticeManager implements Notice {
-    private static final Scanner scanner = new Scanner(System.in);
 
     @Override
     public void print(String line) {
