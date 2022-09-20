@@ -6,7 +6,6 @@ import entity.Flight;
 import java.util.List;
 
 public interface FlightController {
-    void fillFlight();
 
     void showAllFlight();
 

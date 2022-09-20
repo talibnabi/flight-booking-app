@@ -5,6 +5,7 @@ import controller.concretes.BookingControllerManager;
 import controller.concretes.FlightControllerManager;
 import controller.concretes.UserControllerManager;
 import entity.User;
+import service.concretes.FlightServiceManager;
 import ui.concretes.BookingTitle;
 import ui.concretes.BookingUIPage;
 import ui.concretes.UserUIPage;
@@ -13,8 +14,9 @@ import java.util.Scanner;
 
 
 public class MenuUtil {
+    public static final FlightServiceManager flightService = new FlightServiceManager();
     public static final UserMenuManager userMenuManager = new UserMenuManager();
-    public static final BookingUIPage bookingUIPage=new BookingUIPage();
+    public static final BookingUIPage bookingUIPage = new BookingUIPage();
     public static final Scanner scanner = new Scanner(System.in);
     public static final NoticeManager noticeManager = new NoticeManager();
     public static final BookingControllerManager bookingControllerManager = new BookingControllerManager();

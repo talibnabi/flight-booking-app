@@ -1,13 +1,25 @@
 package console.concretes;
 
 import console.abstracts.FlightBookingMenu;
+import entity.Flight;
+import entity.Ticket;
 import exception.*;
 
 import static util.FlightBookingMenuUtil.*;
-import static util.MenuUtil.flightBookingConsoleInterfaceManager;
-import static util.MenuUtil.userMenuManager;
+import static util.MenuUtil.*;
+import static util.RandomUtil.*;
 
 public class FlightBookingMenuManager implements FlightBookingMenu {
+
+    @Override
+    public void fillFlight() {
+        for (int i = 0; i < 100; i++) {
+            Ticket ticket = new Ticket(getRandomTicketPrice());
+            Flight flight = new Flight(getRandomAirline(), getRandomAirportFrom(), getRandomAirportTo(), getRandomFreeSeats(), getRandomLocalDate(), getRandomLocalTime());
+            flight.setTicket(ticket);
+            flightService.create(flight);
+        }
+    }
 
     @Override
     public void showPage() {
