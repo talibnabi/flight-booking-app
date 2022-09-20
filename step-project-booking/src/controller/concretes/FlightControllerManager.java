@@ -5,6 +5,8 @@ import entity.Flight;
 import entity.Ticket;
 import service.concretes.FlightServiceManager;
 
+import java.util.List;
+
 import static util.RandomUtil.*;
 
 public class FlightControllerManager implements FlightController {
@@ -28,5 +30,10 @@ public class FlightControllerManager implements FlightController {
     @Override
     public void showFlightById(int id) {
         System.out.println(flightService.getById(id));
+    }
+
+    @Override
+    public List<Flight> showFlightByFlightInfo(String destination, int seatCount, String time) {
+        return flightService.getFlightByFlightInfo(destination, seatCount, time);
     }
 }

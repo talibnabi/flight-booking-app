@@ -11,4 +11,5 @@ public interface FlightController {
     void showAllFlight();
 
     void showFlightById(int id);
+    List<Flight> showFlightByFlightInfo(String destination, int seatCount, String time);
 }

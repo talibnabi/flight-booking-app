@@ -1,8 +1,13 @@
 package console.concretes;
 
 import console.abstracts.FlightBookingMenu;
+import controller.concretes.BookingControllerManager;
 import controller.concretes.FlightControllerManager;
+import entity.Flight;
 import exception.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static util.MenuUtil.*;
 
@@ -10,6 +15,8 @@ public class FlightBookingMenuManager implements FlightBookingMenu {
     private final FlightBookingConsoleInterfaceManager flightBookingConsoleInterfaceManager = new FlightBookingConsoleInterfaceManager();
     private final FlightControllerManager flightControllerManager = new FlightControllerManager();
     private final UserMenuManager userMenuManager = new UserMenuManager();
+    private final BookingControllerManager bookingControllerManager = new BookingControllerManager();
+
 
     @Override
     public void showPage() {
@@ -37,6 +44,18 @@ public class FlightBookingMenuManager implements FlightBookingMenu {
                     }
                     break;
                 case "3":
+                    noticeManager.print("Enter destination: ");
+                    String destination = noticeManager.readline();
+                    noticeManager.print("Enter number of people (how many tickets to buy): ");
+                    String freeSeats = noticeManager.readline();
+                    noticeManager.print("Enter date (ex 2022-09-12)");
+                    String date = noticeManager.readline();
+                    List<Flight> flights = flightControllerManager.showFlightByFlightInfo(destination, Integer.parseInt(freeSeats), date);
+                    flights.forEach(System.out::println);
+                    noticeManager.print("Make your choice: ");
+                    String id = noticeManager.readline();
+                    List<Flight> flights1 = flights.stream().filter(flightx -> flightx.getId() == Integer.parseInt(id)).toList();
+                    flights1.forEach(System.out::println);
                     break;
                 case "4":
                     break;

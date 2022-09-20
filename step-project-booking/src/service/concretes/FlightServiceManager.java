@@ -5,6 +5,7 @@ import dao.concretes.FlightDAOManager;
 import entity.Flight;
 import service.abstracts.FlightService;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,7 +19,8 @@ public class FlightServiceManager implements FlightService<Flight> {
 
     @Override
     public List<Flight> getFlightByFlightInfo(String destination, int seatCount, String time) {
-        return getAll().stream().filter(flight -> flight.getStoppingLocation().getAirportLocation().equals(destination) && flight.getFreeSeats() == seatCount && flight.getFlightTime().toString().equals(time)).sorted().collect(Collectors.toList());
+        return getAll().stream().filter(flight -> flight.getStoppingLocation().getAirportLocation().equals(destination) && flight.getFreeSeats() >= seatCount && flight.getFlightTime().toString().equals(time)).sorted(Comparator.comparingInt(Flight::getId))
+                .collect(Collectors.toList());
     }
 
     @Override
