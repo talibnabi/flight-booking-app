@@ -4,17 +4,10 @@ import console.concretes.*;
 import controller.concretes.BookingControllerManager;
 import controller.concretes.FlightControllerManager;
 import controller.concretes.UserControllerManager;
-import entity.Booking;
-import entity.Flight;
-import entity.Passenger;
 import entity.User;
-import exception.*;
 import ui.concretes.BookingTitle;
 import ui.concretes.UserUIPage;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 
 
