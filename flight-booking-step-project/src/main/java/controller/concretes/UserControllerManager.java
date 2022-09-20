@@ -7,11 +7,10 @@ import service.concretes.UserServiceManager;
 
 public class UserControllerManager implements LoginController, RegisterController {
     private final UserServiceManager userServiceManager = new UserServiceManager();
+
     @Override
     public Boolean login(String username, String password) {
-        return userServiceManager.getAll().stream().anyMatch(
-                user -> user.getUsername().equals(username)
-                        && user.getPassword().equals(password));
+        return userServiceManager.getAll().stream().anyMatch(user -> user.getUsername().equals(username) && user.getPassword().equals(password));
     }
 
     @Override
