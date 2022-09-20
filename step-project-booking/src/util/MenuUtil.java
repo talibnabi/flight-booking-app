@@ -1,11 +1,16 @@
 package util;
 
 import console.concretes.NoticeManager;
+import controller.concretes.FlightControllerManager;
 import exception.UserMenuValueNotFoundException;
 import exception.UserPasswordDoesntMatcherException;
+import ui.concretes.BookingTitle;
 
 public class MenuUtil {
     public static final NoticeManager noticeManager = new NoticeManager();
+    public static final BookingTitle bookingTitle = new BookingTitle();
+    public static final FlightControllerManager flightControllerManager = new FlightControllerManager();
+
 
     public static String username() {
         noticeManager.print("Username:");
