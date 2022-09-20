@@ -4,6 +4,7 @@
     <list default="true" id="89b3cc68-f4b8-423b-95bd-703928dc1346" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../step-project-booking/src/exception/FlightBookingValueNotFoundException.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../step-project-booking/src/exception/StringParseException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../step-project-booking/src/ApplicationStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../step-project-booking/src/ApplicationStarter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../step-project-booking/src/console/abstracts/FlightBookingMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../step-project-booking/src/console/abstracts/FlightBookingMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../step-project-booking/src/console/abstracts/UserMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../step-project-booking/src/console/abstracts/UserMenu.java" afterDir="false" />

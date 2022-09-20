@@ -10,8 +10,6 @@ import static util.MenuUtil.*;
 public class UserMenuManager implements UserMenu {
     private final UserConsoleInterfaceManager userConsoleManager = new UserConsoleInterfaceManager();
     private final UserControllerManager userControllerManager = new UserControllerManager();
-    private final FlightBookingMenuManager flightBookingMenuManager = new FlightBookingMenuManager();
-
     @Override
     public void showPage() {
         userConsoleManager.showInterface();
@@ -25,7 +23,7 @@ public class UserMenuManager implements UserMenu {
                 case "1":
                     if (userControllerManager.login(username(), password())) {
                         noticeManager.print("Successfully login!");
-
+                        flightBookingMenuManager.menu();
                     } else {
                         throw new UserNotFoundException("User not found...");
                     }

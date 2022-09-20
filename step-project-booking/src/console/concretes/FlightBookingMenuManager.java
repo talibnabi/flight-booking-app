@@ -19,21 +19,21 @@ public class FlightBookingMenuManager implements FlightBookingMenu {
     @Override
     public void menu() throws FlightBookingValueNotFoundException, UserNotFoundException, UserMenuValueNotFoundException, UserPasswordDoesntMatcherException, StringParseException {
         while (true) {
-            noticeManager.print(bookingTitle.bar());
-            noticeManager.print(bookingTitle.title());
-            noticeManager.print(bookingTitle.bar());
-            flightControllerManager.showAllFlight();
             showPage();
             switch (checkingFlightBookingMenu()) {
                 case "1":
+                    noticeManager.print(bookingTitle.bar());
+                    noticeManager.print(bookingTitle.title());
+                    noticeManager.print(bookingTitle.bar());
                     flightControllerManager.showAllFlight();
                     break;
                 case "2":
+                    noticeManager.print("Enter id: ");
                     String ID = noticeManager.readline();
                     try {
                         flightControllerManager.showFlightById(Integer.parseInt(ID));
                     } catch (Exception e) {
-                        throw new  StringParseException();
+                        throw new StringParseException();
                     }
                     break;
                 case "3":

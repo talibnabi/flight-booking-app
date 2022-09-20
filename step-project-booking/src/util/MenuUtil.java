@@ -1,5 +1,6 @@
 package util;
 
+import console.concretes.FlightBookingMenuManager;
 import console.concretes.NoticeManager;
 import controller.concretes.FlightControllerManager;
 import exception.FlightBookingValueNotFoundException;
@@ -12,6 +13,8 @@ public class MenuUtil {
     public static final NoticeManager noticeManager = new NoticeManager();
     public static final BookingTitle bookingTitle = new BookingTitle();
     public static final UserUIPage userUIPage = new UserUIPage();
+    public static final FlightBookingMenuManager flightBookingMenuManager=new FlightBookingMenuManager();
+
 
     public static final FlightControllerManager flightControllerManager = new FlightControllerManager();
 
