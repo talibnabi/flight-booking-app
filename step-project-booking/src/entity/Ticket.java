@@ -14,8 +14,8 @@ public class Ticket implements Serializable {
     private int ticketPrice;
 
     public Ticket(int ticketPrice) {
-        this.id = counterID("./db/id/ticketID.txt");
-        this.ticketNumber = "XX" + counterID("./db/id/ticketID.txt");
+        this.id = counterID("db/id/ticketID.txt");
+        this.ticketNumber = "XX" + counterID("db/id/ticketID.txt");
         this.ticketPrice = ticketPrice;
     }
 

@@ -26,7 +26,7 @@ public class Flight implements Serializable {
 
 
     public Flight(Airline airline, Airport startingLocation, Airport stoppingLocation, int freeSeats, LocalDate flightTime, LocalTime localTime) {
-        this.id = counterID("./db/id/flightID.txt");
+        this.id = counterID("db/id/flightID.txt");
         this.airline = airline;
         this.startingLocation = startingLocation;
         this.stoppingLocation = stoppingLocation;

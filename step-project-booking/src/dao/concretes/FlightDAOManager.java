@@ -1,8 +1,6 @@
 package dao.concretes;
 
-import dao.abstracts.BookingDAO;
 import dao.abstracts.FlightDAO;
-import entity.User;
 import file.abstracts.FilePath;
 import entity.Flight;
 import file.abstracts.FileWorking;
@@ -39,7 +37,7 @@ public class FlightDAOManager implements FlightDAO<Flight>, FilePath<Flight> {
 
     @Override
     public String getFilePath() {
-        return "./db/datasource/flight.bin";
+        return "db/datasource/flight.bin";
     }
 
     @Override

@@ -15,7 +15,7 @@ public class User implements Serializable {
     private final String password;
 
     public User(String username, String password) {
-        this.id = counterID("./db/id/userID.txt");
+        this.id = counterID("db/id/userID.txt");
         this.username = username;
         this.password = password;
     }

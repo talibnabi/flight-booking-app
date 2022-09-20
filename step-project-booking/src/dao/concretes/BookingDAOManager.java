@@ -1,8 +1,6 @@
 package dao.concretes;
 
 import dao.abstracts.BookingDAO;
-import dao.abstracts.DAO;
-import entity.Flight;
 import file.abstracts.FilePath;
 import entity.Booking;
 import file.abstracts.FileWorking;
@@ -39,7 +37,7 @@ public class BookingDAOManager implements BookingDAO<Booking>, FilePath<Booking>
 
     @Override
     public String getFilePath() {
-        return "./db/datasource/booking.bin";
+        return "db/datasource/booking.bin";
     }
 
 }

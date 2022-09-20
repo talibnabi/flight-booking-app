@@ -19,7 +19,7 @@ public class Booking implements Serializable {
     private final LocalDate bookingTime;
 
     public Booking(Flight flight, User user, List<Passenger> passengers, LocalDate bookingTime) {
-        this.id = counterID("./db/id/bookingID.txt");
+        this.id = counterID("db/id/bookingID.txt");
         this.flight = flight;
         this.user = user;
         if (flight.getFreeSeats() > passengers.size()) {

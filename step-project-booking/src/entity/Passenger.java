@@ -15,7 +15,7 @@ public class Passenger implements Serializable {
     private final String lastName;
 
     public Passenger(String firstName, String lastName) {
-        this.id = counterID("./db/id/passengerID.txt");
+        this.id = counterID("db/id/passengerID.txt");
         this.firstName = firstName;
         this.lastName = lastName;
     }

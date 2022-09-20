@@ -37,6 +37,6 @@ public class UserDAOManager implements UserDAO<User>, FilePath<User> {
 
     @Override
     public String getFilePath() {
-        return "./db/datasource/user.bin";
+        return "db/datasource/user.bin";
     }
 }
