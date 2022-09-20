@@ -16,7 +16,7 @@ public class BookingUIPage implements Menu {
                 "| 3. --> MAKE A BOOKING                  |\n" +
                 "| 4. --> SHOW MY ALL BOOKINGS            |\n" +
                 "| 5. --> CANCEL MY BOOKING               |\n" +
-                "| 6. --> EXIT                            |\n" +
+                "| 6. --> LOG OUT                           |\n" +
                 "|========================================|\n";
     }
 }
