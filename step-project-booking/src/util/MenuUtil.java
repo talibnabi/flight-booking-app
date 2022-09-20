@@ -1,56 +1,34 @@
 package util;
 
-import console.concretes.FlightBookingMenuManager;
-import console.concretes.NoticeManager;
+import console.concretes.*;
+import controller.concretes.BookingControllerManager;
 import controller.concretes.FlightControllerManager;
-import exception.FlightBookingValueNotFoundException;
-import exception.UserMenuValueNotFoundException;
-import exception.UserPasswordDoesntMatcherException;
+import controller.concretes.UserControllerManager;
+import entity.Booking;
+import entity.Flight;
+import entity.Passenger;
+import entity.User;
+import exception.*;
 import ui.concretes.BookingTitle;
 import ui.concretes.UserUIPage;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+
+
 public class MenuUtil {
     public static final NoticeManager noticeManager = new NoticeManager();
+    public static final BookingControllerManager bookingControllerManager = new BookingControllerManager();
     public static final BookingTitle bookingTitle = new BookingTitle();
     public static final UserUIPage userUIPage = new UserUIPage();
-    public static final FlightBookingMenuManager flightBookingMenuManager=new FlightBookingMenuManager();
-
-
+    public static final FlightBookingMenuManager flightBookingMenuManager = new FlightBookingMenuManager();
+    public static final UserMenuManager userMenuManager = new UserMenuManager();
+    public static final FlightBookingConsoleInterfaceManager flightBookingConsoleInterfaceManager = new FlightBookingConsoleInterfaceManager();
     public static final FlightControllerManager flightControllerManager = new FlightControllerManager();
 
-
-    public static String username() {
-        noticeManager.print("Username:");
-        return noticeManager.readline();
-    }
-
-    public static String password() throws UserPasswordDoesntMatcherException {
-        noticeManager.print("Password: ");
-        String password = noticeManager.readline();
-        if (password.length() < 8) {
-            throw new UserPasswordDoesntMatcherException("Password must be minimum 8 element.Please try again....");
-        }
-        return password;
-    }
-
-    public static String checkingUserMenu() throws UserMenuValueNotFoundException {
-        String origin = null;
-        noticeManager.print("Select: ");
-        origin = noticeManager.readline();
-        if (!(origin.equals("1") || origin.equals("2") || origin.equals("3"))) {
-            throw new UserMenuValueNotFoundException("Value must be 1,2 or 3");
-        }
-        return origin;
-    }
-
-    public static String checkingFlightBookingMenu() throws FlightBookingValueNotFoundException {
-        String origin = null;
-        noticeManager.print("Select: ");
-        origin = noticeManager.readline();
-        if (!(origin.equals("1") || origin.equals("2") || origin.equals("3") || origin.equals("4") || origin.equals("5") || origin.equals("6"))) {
-            throw new FlightBookingValueNotFoundException("Value must be 1,2,3,4,5 or 6");
-        }
-        return origin;
-    }
-
+    public static final UserConsoleInterfaceManager userConsoleManager = new UserConsoleInterfaceManager();
+    public static final UserControllerManager userControllerManager = new UserControllerManager();
+    public static User user;
 }
