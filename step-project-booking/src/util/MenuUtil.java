@@ -6,10 +6,13 @@ import exception.FlightBookingValueNotFoundException;
 import exception.UserMenuValueNotFoundException;
 import exception.UserPasswordDoesntMatcherException;
 import ui.concretes.BookingTitle;
+import ui.concretes.UserUIPage;
 
 public class MenuUtil {
     public static final NoticeManager noticeManager = new NoticeManager();
     public static final BookingTitle bookingTitle = new BookingTitle();
+    public static final UserUIPage userUIPage = new UserUIPage();
+
     public static final FlightControllerManager flightControllerManager = new FlightControllerManager();
 
 

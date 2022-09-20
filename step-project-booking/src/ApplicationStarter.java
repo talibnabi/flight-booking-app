@@ -1,9 +1,6 @@
 import console.abstracts.UserMenu;
 import console.concretes.UserMenuManager;
-import exception.FlightBookingValueNotFoundException;
-import exception.UserMenuValueNotFoundException;
-import exception.UserNotFoundException;
-import exception.UserPasswordDoesntMatcherException;
+import exception.*;
 
 public class ApplicationStarter {
 
@@ -12,7 +9,7 @@ public class ApplicationStarter {
         try {
             userMenu.menu();
         } catch (UserMenuValueNotFoundException | UserPasswordDoesntMatcherException | UserNotFoundException |
-                 FlightBookingValueNotFoundException exception) {
+                 FlightBookingValueNotFoundException | StringParseException exception) {
             System.out.println(exception.getMessage());
         }
     }

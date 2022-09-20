@@ -1,12 +1,9 @@
 package console.abstracts;
 
 
-import exception.FlightBookingValueNotFoundException;
-import exception.UserMenuValueNotFoundException;
-import exception.UserNotFoundException;
-import exception.UserPasswordDoesntMatcherException;
+import exception.*;
 
 public interface FlightBookingMenu {
     void showPage();
-    void menu() throws FlightBookingValueNotFoundException, UserNotFoundException, UserMenuValueNotFoundException, UserPasswordDoesntMatcherException;
+    void menu() throws FlightBookingValueNotFoundException, UserNotFoundException, UserMenuValueNotFoundException, UserPasswordDoesntMatcherException, StringParseException;
 }
