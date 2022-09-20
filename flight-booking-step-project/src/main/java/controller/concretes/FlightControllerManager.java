@@ -6,19 +6,20 @@ import entity.Ticket;
 import service.concretes.FlightServiceManager;
 
 import java.util.List;
+import java.util.Optional;
 
 
 public class FlightControllerManager implements FlightController {
     private final FlightServiceManager flightService = new FlightServiceManager();
 
     @Override
-    public void showAllFlight() {
-        flightService.getAll().forEach(System.out::println);
+    public Optional<List<Flight>> showAllFlight() {
+        return Optional.ofNullable(flightService.getAll());
     }
 
     @Override
-    public void showFlightById(int id) {
-        System.out.println(flightService.getById(id));
+    public Optional<Flight> showFlightById(int id) {
+        return Optional.ofNullable(flightService.getById(id));
     }
 
     @Override

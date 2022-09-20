@@ -27,14 +27,14 @@ public class FlightBookingMenuUtil {
         noticeManager.print(bookingTitle.bar());
         noticeManager.print(bookingTitle.title());
         noticeManager.print(bookingTitle.bar());
-        flightControllerManager.showAllFlight();
+        flightControllerManager.showAllFlight().orElseThrow().forEach(System.out::println);
     }
 
     public static void showFlightById() throws StringParseException {
         noticeManager.print("Enter id: ");
         String ID = noticeManager.readline();
         try {
-            flightControllerManager.showFlightById(Integer.parseInt(ID));
+            System.out.println(flightControllerManager.showFlightById(Integer.parseInt(ID)).orElseThrow());
         } catch (Exception e) {
             throw new StringParseException();
         }

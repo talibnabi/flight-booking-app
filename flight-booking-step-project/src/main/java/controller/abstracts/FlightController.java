@@ -4,11 +4,12 @@ package controller.abstracts;
 import entity.Flight;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface FlightController {
 
-    void showAllFlight();
+    Optional<List<Flight>> showAllFlight();
 
-    void showFlightById(int id);
+    Optional<Flight> showFlightById(int id);
     List<Flight> showFlightByFlightInfo(String destination, int seatCount, String time);
 }
