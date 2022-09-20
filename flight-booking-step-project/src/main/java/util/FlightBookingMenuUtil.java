@@ -70,10 +70,11 @@ public class FlightBookingMenuUtil {
     }
 
     public static void getAllBookingByUserName() {
-        bookingControllerManager.getAllBookingByUsername(user.getUsername());
+        bookingControllerManager.getAllBookingByUsername(user.getUsername()).orElseThrow().forEach(System.out::println);
     }
 
     public static void cancelBooking() {
+        noticeManager.print("Enter id: ");
         String idForSelect = noticeManager.readline();
         bookingControllerManager.cancelBookingById(Integer.parseInt(idForSelect));
     }

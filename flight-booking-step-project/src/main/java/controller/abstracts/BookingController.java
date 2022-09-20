@@ -2,12 +2,15 @@ package controller.abstracts;
 
 import entity.Booking;
 
+import java.util.List;
+import java.util.Optional;
+
 public interface BookingController {
-    void getAllBookingByUsername(String username);
+    Optional<List<Booking>> getAllBookingByUsername(String username);
 
-    void getAllBookingByPassengerInfo(String username, String passengerFirstName, String passengerLastName);
+    Optional<List<Booking>> getAllBookingByPassengerInfo(String username, String passengerFirstName, String passengerLastName);
 
-    void cancelBookingById(int id);
+    Boolean cancelBookingById(int id);
 
     Boolean createBooking(Booking booking);
 }
