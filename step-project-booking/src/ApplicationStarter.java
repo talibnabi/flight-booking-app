@@ -14,6 +14,4 @@ public class ApplicationStarter {
             userMenu.menu();
         }
     }
-
-
 }

@@ -3,12 +3,17 @@ package console.concretes;
 import console.abstracts.FlightBookingMenu;
 import controller.concretes.BookingControllerManager;
 import controller.concretes.FlightControllerManager;
+import entity.Booking;
 import entity.Flight;
+import entity.Passenger;
 import exception.*;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static console.concretes.UserMenuManager.user;
 import static util.MenuUtil.*;
 
 public class FlightBookingMenuManager implements FlightBookingMenu {
@@ -55,11 +60,24 @@ public class FlightBookingMenuManager implements FlightBookingMenu {
                     noticeManager.print("Make your choice: ");
                     String id = noticeManager.readline();
                     List<Flight> flights1 = flights.stream().filter(flightx -> flightx.getId() == Integer.parseInt(id)).toList();
-
+                    List<Passenger> passengers = new ArrayList<>();
+                    for (int i = 0; i < Integer.parseInt(freeSeats); i++) {
+                        noticeManager.print("Enter passenger " + (i + 1) + " firstname: ");
+                        String firstName = noticeManager.readline();
+                        noticeManager.print("Enter passenger " + (i + 1) + " lastname: ");
+                        String lastName = noticeManager.readline();
+                        Passenger passenger = new Passenger(firstName, lastName);
+                        passengers.add(passenger);
+                    }
+                    Booking booking = new Booking(flights.get(0), user, passengers, LocalDate.now());
+                    bookingControllerManager.createBooking(booking);
                     break;
                 case "4":
+                    bookingControllerManager.getAllBookingByUsername(user.getUsername());
                     break;
                 case "5":
+                    String idForSelect = noticeManager.readline();
+                    bookingControllerManager.cancelBookingById(Integer.parseInt(idForSelect));
                     break;
                 case "6":
                     userMenuManager.menu();
