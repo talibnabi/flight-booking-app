@@ -3,6 +3,7 @@ package console.concretes;
 import console.abstracts.UserMenu;
 import controller.concretes.FlightControllerManager;
 import controller.concretes.UserControllerManager;
+import exception.FlightBookingValueNotFoundException;
 import exception.UserMenuValueNotFoundException;
 import exception.UserNotFoundException;
 import exception.UserPasswordDoesntMatcherException;
@@ -20,10 +21,10 @@ public class UserMenuManager implements UserMenu {
     }
 
     @Override
-    public void menu() throws UserMenuValueNotFoundException, UserPasswordDoesntMatcherException, UserNotFoundException {
+    public void menu() throws UserMenuValueNotFoundException, UserPasswordDoesntMatcherException, UserNotFoundException, FlightBookingValueNotFoundException {
         showPage();
         while (true) {
-            switch (checking()) {
+            switch (checkingUserMenu()) {
                 case "1":
                     if (userControllerManager.login(username(), password())) {
                         noticeManager.print("Successfully login!");
