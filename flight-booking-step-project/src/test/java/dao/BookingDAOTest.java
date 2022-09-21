@@ -82,5 +82,4 @@ public class BookingDAOTest {
         flight1.setTicket(ticket);
     }
 
-
 }
