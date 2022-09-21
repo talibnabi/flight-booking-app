@@ -31,7 +31,6 @@ public class UserDAOTest {
 
     @Test
     void add() {
-        User user = new User("rasim", "rasim123");
         assertTrue(userDAOManager.create(user));
     }
 
