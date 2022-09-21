@@ -12,33 +12,49 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BookingDAOTest {
-    private static final BookingDAOManager bookingDAOManager=new BookingDAOManager();
+    private static final BookingDAOManager bookingDAOManager = new BookingDAOManager();
     private static final FlightDAOManager flightDAOManager = new FlightDAOManager();
     private static final Ticket ticket = new Ticket(669);
     private static final Flight flight1 = new Flight(Airline.AMERICAN_AIRLINES, Airport.ABERDEEN, Airport.ABU_SIMBEL, 10, LocalDate.now(), LocalTime.now().plusNanos(10));
-    private static final Passenger passengerFirst=new Passenger("Talib","Nabi");
-    private static final Passenger passengerSecond=new Passenger("Talib","Nabi");
+    private static final Passenger passengerFirst = new Passenger("Talib", "Nabi");
+    private static final Passenger passengerSecond = new Passenger("Talib", "Nabi");
     private static final UserDAOManager userDAOManager = new UserDAOManager();
     private static final User user = new User("rasim", "rasim123");
+
+
     @Test
     public void getAllBooking() {
-        List<Passenger> passengers= new ArrayList<>();
+        List<Passenger> passengers = new ArrayList<>();
         passengers.add(passengerFirst);
         passengers.add(passengerSecond);
         setTicket();
         flightDAOManager.create(flight1);
         userDAOManager.create(user);
-        Booking booking= new Booking(flight1,user, passengers,LocalDate.now());
+        Booking booking = new Booking(flight1, user, passengers, LocalDate.now());
         bookingDAOManager.create(booking);
-        List<Booking> bookings= new ArrayList<>();
+        List<Booking> bookings = new ArrayList<>();
         bookings.add(booking);
         assertEquals(bookings.get(0).toString(), bookingDAOManager.getAll().orElseThrow().get(booking.getId() - 20).toString());
     }
-    
+
+    @Test
+    public void getBookingById() {
+        List<Passenger> passengers = new ArrayList<>();
+        passengers.add(passengerFirst);
+        passengers.add(passengerSecond);
+        setTicket();
+        flightDAOManager.create(flight1);
+        userDAOManager.create(user);
+        Booking booking = new Booking(flight1, user, passengers, LocalDate.now());
+        bookingDAOManager.create(booking);
+        assertEquals(Optional.of(booking), bookingDAOManager.getById(booking.getId()));
+    }
+
     private static void setTicket() {
         ticket.setTicketNumber("XX1");
         flight1.setTicket(ticket);
