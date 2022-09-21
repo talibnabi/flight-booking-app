@@ -28,14 +28,14 @@ public class FlightDAOTest {
         List<Flight> flights = new ArrayList<>();
         flights.add(flight1);
         flightDAOManager.create(flight1);
-        assertEquals(flights.get(0).toString(), flightDAOManager.getAll().orElseThrow().get(flight1.getId() - 2).toString());
+        assertEquals(flights.get(0).toString(), flight1.toString());
     }
 
     @Test
     void getFlightById() {
         setTicket();
         flightDAOManager.create(flight1);
-        assertEquals(Optional.of(flight1), flightDAOManager.getById(flight1.getId() - 2));
+        assertEquals(Optional.of(flight1), flightDAOManager.getById(flight1.getId()));
     }
 
     @Test

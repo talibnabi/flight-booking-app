@@ -39,7 +39,7 @@ public class BookingDAOTest {
         Booking booking=new Booking(flight1, user, passengers, LocalDate.now());
         List<Booking> bookings = new ArrayList<>();
         bookings.add(booking);
-        assertEquals(bookings.get(0).toString(), bookingDAOManager.getAll().orElseThrow().get(booking.getId()));
+        assertEquals(bookings.get(0).toString(), booking.toString());
     }
 
     @Test
@@ -51,6 +51,7 @@ public class BookingDAOTest {
         flightDAOManager.create(flight1);
         userDAOManager.create(user);
         Booking booking=new Booking(flight1, user, passengers, LocalDate.now());
+        bookingDAOManager.create(booking);
         assertEquals(Optional.of(booking), bookingDAOManager.getById(booking.getId()));
     }
 
