@@ -12,10 +12,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class UserDAOTest {
     private static final UserDAOManager userDAOManager = new UserDAOManager();
+    private static final User user = new User("rasim", "rasim123");
+
 
     @Test
     void getAllUser() {
-        User user = new User("rasim", "rasim123");
         userDAOManager.create(user);
         ArrayList<User> users = new ArrayList<>();
         users.add(user);
@@ -24,7 +25,6 @@ public class UserDAOTest {
 
     @Test
     void getUserById() {
-        User user = new User("rasim", "rasim123");
         userDAOManager.create(user);
         assertEquals(Optional.of(user), userDAOManager.getById(user.getId()));
     }
@@ -33,5 +33,11 @@ public class UserDAOTest {
     void add() {
         User user = new User("rasim", "rasim123");
         assertTrue(userDAOManager.create(user));
+    }
+
+    @Test
+    void remove() {
+        userDAOManager.create(user);
+        assertTrue(userDAOManager.delete(user.getId()));
     }
 }
