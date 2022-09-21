@@ -24,8 +24,7 @@ public class FlightDAOTest {
 
     @Test
     void getAllFlight() {
-        ticket.setTicketNumber("XX1");
-        flight1.setTicket(ticket);
+        setTicket();
         List<Flight> flights = new ArrayList<>();
         flights.add(flight1);
         flightDAOManager.create(flight1);
@@ -34,16 +33,26 @@ public class FlightDAOTest {
 
     @Test
     void getFlightById() {
-        ticket.setTicketNumber("XX1");
-        flight1.setTicket(ticket);
+        setTicket();
         flightDAOManager.create(flight1);
         assertEquals(Optional.of(flight1), flightDAOManager.getById(flight1.getId() - 2));
     }
 
     @Test
     void add() {
+        setTicket();
+        assertTrue(flightDAOManager.create(flight1));
+    }
+
+    @Test
+    void remove() {
+        setTicket();
+        flightDAOManager.create(flight1);
+        assertTrue(flightDAOManager.delete(flight1.getId()));
+    }
+
+    private static void setTicket() {
         ticket.setTicketNumber("XX1");
         flight1.setTicket(ticket);
-        assertTrue(flightDAOManager.create(flight1));
     }
 }
