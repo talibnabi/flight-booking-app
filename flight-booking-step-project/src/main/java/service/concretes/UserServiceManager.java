@@ -44,5 +44,4 @@ public class UserServiceManager implements UserService<User> {
         return Optional.empty();
     }
 
-
 }
