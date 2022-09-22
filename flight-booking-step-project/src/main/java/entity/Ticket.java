@@ -6,7 +6,7 @@ import java.util.Objects;
 
 import static util.EntityUtil.counterID;
 
-public class Ticket implements Serializable {
+public final class Ticket implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     private final int id;

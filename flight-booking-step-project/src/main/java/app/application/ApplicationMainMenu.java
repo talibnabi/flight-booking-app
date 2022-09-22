@@ -1,14 +1,15 @@
-package app;
+package app.application;
 import exception.*;
 
-import static util.MenuUtil.userMenuManager;
+import static util.MenuUtil.menuManager;
+
 
 public class ApplicationMainMenu {
     public static void showMenuInfo(){
         try {
-            userMenuManager.menu();
+            menuManager.menu();
         } catch (UserMenuValueNotFoundException | UserPasswordDoesntMatcherException | UserNotFoundException |
-                 FlightBookingValueNotFoundException | StringParseException exception) {
+                 FlightBookingValueNotFoundException | StringParseException | AdminNotFoundException exception) {
             System.out.println(exception.getMessage());
         }
     }

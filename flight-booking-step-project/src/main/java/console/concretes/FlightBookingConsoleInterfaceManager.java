@@ -5,7 +5,7 @@ import console.abstracts.ShowConsoleInterface;
 import static util.MenuUtil.bookingUIPage;
 import static util.MenuUtil.noticeManager;
 
-public class FlightBookingConsoleInterfaceManager implements ShowConsoleInterface {
+public final class FlightBookingConsoleInterfaceManager implements ShowConsoleInterface {
 
     @Override
     public void showInterface() {

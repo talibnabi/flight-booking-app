@@ -7,7 +7,7 @@ import service.abstracts.UserService;
 import java.util.List;
 import java.util.Optional;
 
-public class UserServiceManager implements UserService<User> {
+public final class UserServiceManager implements UserService<User> {
     private final UserDAOManager userDAOManager = new UserDAOManager();
 
     @Override

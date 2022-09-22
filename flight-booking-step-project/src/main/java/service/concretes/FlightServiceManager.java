@@ -9,7 +9,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class FlightServiceManager implements FlightService<Flight> {
+public final class FlightServiceManager implements FlightService<Flight> {
     private final FlightDAOManager flightDAO = new FlightDAOManager();
 
     @Override

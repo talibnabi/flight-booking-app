@@ -7,12 +7,12 @@ import java.util.Objects;
 import static util.EntityUtil.counterID;
 
 
-public class User implements Serializable {
+public final class User implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     private final int id;
-    private final String username;
-    private final String password;
+    private  String username;
+    private  String password;
 
     public User(String username, String password) {
         this.id = counterID("db/id/userID.txt");
@@ -30,6 +30,14 @@ public class User implements Serializable {
 
     public String getPassword() {
         return password;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

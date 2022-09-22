@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class BookingDAOManager implements BookingDAO<Booking>, FilePath<Booking> {
+public final class BookingDAOManager implements BookingDAO<Booking>, FilePath<Booking> {
     private final FileWorking<Booking> fileWorking = new WorkingWithFile<>();
 
     @Override

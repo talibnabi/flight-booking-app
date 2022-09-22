@@ -40,7 +40,7 @@ public class FlightBookingMenuUtil {
         }
     }
 
-    public static void bookingFlight() throws UserNotFoundException, StringParseException, UserMenuValueNotFoundException, UserPasswordDoesntMatcherException, FlightBookingValueNotFoundException {
+    public static void bookingFlight() throws UserNotFoundException, StringParseException, UserMenuValueNotFoundException, UserPasswordDoesntMatcherException, FlightBookingValueNotFoundException, AdminNotFoundException {
         noticeManager.print("Enter destination: ");
         String destination = noticeManager.readline();
         noticeManager.print("Enter number of people (how many tickets to buy): ");

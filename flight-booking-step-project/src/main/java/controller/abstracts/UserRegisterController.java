@@ -1,5 +1,5 @@
 package controller.abstracts;
 
-public interface RegisterController {
+public interface UserRegisterController {
     Boolean register(String username,String password);
 }

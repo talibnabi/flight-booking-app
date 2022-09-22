@@ -1,11 +1,11 @@
 package controller.concretes;
 
-import controller.abstracts.LoginController;
-import controller.abstracts.RegisterController;
+import controller.abstracts.UserLoginController;
+import controller.abstracts.UserRegisterController;
 import entity.User;
 import service.concretes.UserServiceManager;
 
-public class UserControllerManager implements LoginController, RegisterController {
+public class UserControllerManager implements UserLoginController, UserRegisterController {
     private final UserServiceManager userServiceManager = new UserServiceManager();
 
     @Override

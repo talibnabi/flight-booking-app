@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class FlightDAOManager implements FlightDAO<Flight>, FilePath<Flight> {
+public final class FlightDAOManager implements FlightDAO<Flight>, FilePath<Flight> {
     private final FileWorking<Flight> fileWorking = new WorkingWithFile<>();
 
     @Override

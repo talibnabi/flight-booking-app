@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class UserDAOManager implements UserDAO<User>, FilePath<User> {
+public final class UserDAOManager implements UserDAO<User>, FilePath<User> {
     private final FileWorking<User> fileWorking = new WorkingWithFile<>();
 
     @Override

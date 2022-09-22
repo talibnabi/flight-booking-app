@@ -7,7 +7,7 @@ import java.util.Objects;
 import static util.EntityUtil.counterID;
 
 
-public class Passenger implements Serializable {
+public final class Passenger implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     private final int id;

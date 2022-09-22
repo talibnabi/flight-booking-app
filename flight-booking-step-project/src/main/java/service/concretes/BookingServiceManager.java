@@ -7,7 +7,7 @@ import service.abstracts.BookingService;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class BookingServiceManager implements BookingService<Booking> {
+public final class BookingServiceManager implements BookingService<Booking> {
     private final BookingDAOManager bookingDAOManager = new BookingDAOManager();
 
     @Override

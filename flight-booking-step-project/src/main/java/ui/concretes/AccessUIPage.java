@@ -3,7 +3,7 @@ package ui.concretes;
 
 import ui.abstracts.Menu;
 
-public class UserUIPage implements Menu {
+public class AccessUIPage implements Menu {
 
     @Override
     public String showInterface() {
@@ -15,6 +15,7 @@ public class UserUIPage implements Menu {
                 "| 1. --> SIGN IN                         |\n" +
                 "| 2. --> SIGN UP                         |\n" +
                 "| 3. --> EXIT                            |\n" +
+                "| 4. --> LOGIN AS ADMIN                  |\n" +
                 "|========================================|\n";
     }
 }

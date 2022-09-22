@@ -4,7 +4,7 @@ import console.abstracts.Notice;
 
 import static util.MenuUtil.scanner;
 
-public class NoticeManager implements Notice {
+public final class NoticeManager implements Notice {
 
     @Override
     public void print(String line) {

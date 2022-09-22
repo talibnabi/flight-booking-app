@@ -12,7 +12,7 @@ import java.util.Objects;
 import static util.EntityUtil.counterID;
 
 
-public class Flight implements Serializable {
+public final class Flight implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     private final int id;

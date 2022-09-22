@@ -1,6 +1,4 @@
-import app.ApplicationMainMenu;
-import console.concretes.FlightBookingMenuManager;
-
+import app.application.ApplicationMainMenu;
 public class ApplicationStarter {
 
     public static void main(String[] args) {

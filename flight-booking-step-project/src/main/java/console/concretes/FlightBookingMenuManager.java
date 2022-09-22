@@ -9,11 +9,13 @@ import static util.FlightBookingMenuUtil.*;
 import static util.MenuUtil.*;
 import static util.RandomUtil.*;
 
-public class FlightBookingMenuManager implements FlightBookingMenu {
+public final class FlightBookingMenuManager implements FlightBookingMenu {
 
     @Override
     public void fillFlight() {
-        for (int i = 0; i < 100; i++) {
+        noticeManager.print("How many flight do you want to add?: ");
+        int flightCount = scanner.nextInt();
+        for (int i = 0; i < flightCount; i++) {
             Ticket ticket = new Ticket(getRandomTicketPrice());
             Flight flight = new Flight(getRandomAirline(), getRandomAirportFrom(), getRandomAirportTo(), getRandomFreeSeats(), getRandomLocalDate(), getRandomLocalTime());
             flight.setTicket(ticket);
@@ -27,7 +29,7 @@ public class FlightBookingMenuManager implements FlightBookingMenu {
     }
 
     @Override
-    public void menu() throws FlightBookingValueNotFoundException, UserNotFoundException, UserMenuValueNotFoundException, UserPasswordDoesntMatcherException, StringParseException {
+    public void menu() throws FlightBookingValueNotFoundException, UserNotFoundException, UserMenuValueNotFoundException, UserPasswordDoesntMatcherException, StringParseException, AdminNotFoundException {
         while (true) {
             showPage();
             switch (checkingFlightBookingMenu()) {
@@ -36,7 +38,7 @@ public class FlightBookingMenuManager implements FlightBookingMenu {
                 case "3" -> bookingFlight();
                 case "4" -> getAllBookingByUserName();
                 case "5" -> cancelBooking();
-                case "6" -> userMenuManager.menu();
+                case "6" -> menuManager.menu();
             }
         }
     }
