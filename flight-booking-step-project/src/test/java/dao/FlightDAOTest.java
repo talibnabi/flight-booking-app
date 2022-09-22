@@ -51,6 +51,8 @@ public class FlightDAOTest {
         assertTrue(flightDAOManager.delete(flight1.getId()));
     }
 
+
+
     private static void setTicket() {
         ticket.setTicketNumber("XX1");
         flight1.setTicket(ticket);

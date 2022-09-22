@@ -1,6 +1,5 @@
 package service;
 
-import dao.concretes.FlightDAOManager;
 import entity.Flight;
 import entity.Ticket;
 import enumeration.Airline;
@@ -11,6 +10,7 @@ import service.concretes.FlightServiceManager;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,6 +21,7 @@ public class FlightServiceTest {
     private static final FlightServiceManager flightServiceManager = new FlightServiceManager();
     private static final Ticket ticket = new Ticket(669);
     private static final Flight flight1 = new Flight(Airline.AMERICAN_AIRLINES, Airport.ABERDEEN, Airport.ABU_SIMBEL, 10, LocalDate.now(), LocalTime.now().plusNanos(10));
+
     @Test
     void getAllFlight() {
         setTicket();
@@ -49,6 +50,7 @@ public class FlightServiceTest {
         flightServiceManager.create(flight1);
         assertTrue(flightServiceManager.delete(flight1.getId()));
     }
+
 
     private static void setTicket() {
         ticket.setTicketNumber("XX1");
