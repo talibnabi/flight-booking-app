@@ -1,9 +1,7 @@
-import app.application.ApplicationMainMenu;
+import app.info.ApplicationMainMenu;
 public class ApplicationStarter {
 
     public static void main(String[] args) {
-//        FlightBookingMenuManager flightBookingMenuManager=new FlightBookingMenuManager();
-//        flightBookingMenuManager.fillFlight();
         ApplicationMainMenu.showMenuInfo();
     }
 }
