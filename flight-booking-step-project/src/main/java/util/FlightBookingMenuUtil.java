@@ -14,7 +14,7 @@ import static util.MenuUtil.*;
 public class FlightBookingMenuUtil {
 
     public static String checkingFlightBookingMenu() throws FlightBookingValueNotFoundException {
-        String origin = null;
+        String origin;
         noticeManager.print("Select: ");
         origin = noticeManager.readline();
         if (!(origin.equals("1") || origin.equals("2") || origin.equals("3") || origin.equals("4") || origin.equals("5") || origin.equals("6"))) {

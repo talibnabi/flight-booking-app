@@ -1,9 +1,7 @@
 package app.admin.abstracts;
 
-import exception.AdminNotFoundException;
+import console.abstracts.AccessMenu;
 
-public interface AdminMenu {
-    void showPage();
+public interface AdminMenu extends AccessMenu {
 
-    void menu() throws AdminNotFoundException;
 }

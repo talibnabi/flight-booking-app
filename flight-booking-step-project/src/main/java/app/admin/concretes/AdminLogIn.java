@@ -3,12 +3,11 @@ package app.admin.concretes;
 import entity.Admin;
 import exception.*;
 
-import static util.AdminUtil.adminMenuManager;
 import static util.MenuUtil.*;
 import static util.MenuUtil.menuManager;
 
 public class AdminLogIn {
-    public static void adminLogin() throws StringParseException, AdminNotFoundException, UserNotFoundException, UserMenuValueNotFoundException, UserPasswordDoesntMatcherException, FlightBookingValueNotFoundException {
+    public static void adminLogin() throws AdminNotFoundException, UserNotFoundException, StringParseException, UserMenuValueNotFoundException, UserPasswordDoesntMatcherException, FlightBookingValueNotFoundException {
         noticeManager.print("Admin Username: ");
         String adminUsername = noticeManager.readline();
         noticeManager.print("Admin Password: ");

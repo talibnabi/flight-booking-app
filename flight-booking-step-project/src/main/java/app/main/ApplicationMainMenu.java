@@ -1,4 +1,4 @@
-package app.info;
+package app.main;
 import exception.*;
 
 import static util.MenuUtil.menuManager;

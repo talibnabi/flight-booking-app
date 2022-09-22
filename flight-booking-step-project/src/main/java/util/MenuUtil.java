@@ -1,6 +1,7 @@
 package util;
 
 import app.admin.concretes.AdminMenuInterfaceManager;
+import app.admin.concretes.AdminMenuManager;
 import console.concretes.*;
 import controller.concretes.AdminControllerManager;
 import controller.concretes.BookingControllerManager;
@@ -19,6 +20,9 @@ import java.util.Scanner;
 
 
 public class MenuUtil {
+    public static final FlightBookingMenuManager flightBookingMenuManager = new FlightBookingMenuManager();
+    public static final AdminMenuManager adminMenuManager = new AdminMenuManager();
+
     public static final AdminMenuInterfaceManager adminMenuInterfaceManager=new AdminMenuInterfaceManager();
     public static final AdminServiceManager adminServiceManager=new AdminServiceManager();
     public static final AdminControllerManager adminControllerManager=new AdminControllerManager();
@@ -31,7 +35,6 @@ public class MenuUtil {
     public static final BookingTitle bookingTitle = new BookingTitle();
     public static final AccessUIPage ACCESS_UI_PAGE = new AccessUIPage();
     public static final AdminUIPage ADMIN_UI_PAGE=new AdminUIPage();
-    public static final FlightBookingMenuManager flightBookingMenuManager = new FlightBookingMenuManager();
     public static final FlightBookingConsoleInterfaceManager flightBookingConsoleInterfaceManager = new FlightBookingConsoleInterfaceManager();
     public static final FlightControllerManager flightControllerManager = new FlightControllerManager();
 
