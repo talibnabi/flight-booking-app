@@ -1,5 +1,4 @@
-package app.main;
-
+import app.ApplicationMainMenu;
 import exception.*;
 
 public class ApplicationStarter {
