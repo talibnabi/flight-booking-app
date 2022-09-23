@@ -44,11 +44,9 @@ public final class FlightBookingMenuManager implements FlightBookingMenu {
                     case "6" -> menuManager.menu();
                 }
             }
-        } catch (AdminNotFoundException
-                 | FlightBookingValueNotFoundException
-                 | StringParseException | UserNotFoundException
-                 | UserMenuValueNotFoundException |
-                 UserPasswordDoesntMatcherException exception) {
+        } catch (AdminNotFoundException | FlightBookingValueNotFoundException|
+                 UserNotFoundException | UserMenuValueNotFoundException | UserPasswordDoesntMatcherException |
+                 FlightIdNotFoundException | FlightNotFoundException  exception) {
             noticeManager.print(exception.getMessage());
             menu();
         }

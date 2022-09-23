@@ -30,27 +30,32 @@ public class FlightBookingMenuUtil {
         flightControllerManager.showAllFlight().orElseThrow().forEach(System.out::println);
     }
 
-    public static void showFlightById() throws StringParseException {
+    public static void showFlightById() throws FlightIdNotFoundException {
         noticeManager.print("Enter id: ");
         String ID = noticeManager.readline();
         try {
             System.out.println(flightControllerManager.showFlightById(Integer.parseInt(ID)).orElseThrow());
         } catch (Exception e) {
-            throw new StringParseException();
+            throw new FlightIdNotFoundException("Flight ID not found...");
         }
+
     }
 
-    public static void bookingFlight() throws UserNotFoundException, StringParseException, UserMenuValueNotFoundException, UserPasswordDoesntMatcherException, FlightBookingValueNotFoundException, AdminNotFoundException {
+    public static void bookingFlight() throws UserNotFoundException, StringParseException, UserMenuValueNotFoundException, UserPasswordDoesntMatcherException, FlightBookingValueNotFoundException, AdminNotFoundException, FlightIdNotFoundException, FlightNotFoundException {
+        String destination;
+        String freeSeats;
+        String date;
         noticeManager.print("Enter destination: ");
-        String destination = noticeManager.readline();
+        destination = noticeManager.readline();
         noticeManager.print("Enter number of people (how many tickets to buy): ");
-        String freeSeats = noticeManager.readline();
+        freeSeats = noticeManager.readline();
         noticeManager.print("Enter date (ex 2022-09-12)");
-        String date = noticeManager.readline();
-        List<Flight> flights = flightControllerManager.showFlightByFlightInfo(destination, Integer.parseInt(freeSeats), date);
-        if (flights.isEmpty()) {
-            System.out.println("Nothing found.Please try again....");
-            flightBookingMenuManager.menu();
+        date = noticeManager.readline();
+        List<Flight> flights;
+        try {
+            flights = flightControllerManager.showFlightByFlightInfo(destination, Integer.parseInt(freeSeats), date);
+        } catch (Exception exception) {
+            throw new FlightNotFoundException("Flight not found...Try again");
         }
         flights.forEach(System.out::println);
         noticeManager.print("Make your choice: ");
