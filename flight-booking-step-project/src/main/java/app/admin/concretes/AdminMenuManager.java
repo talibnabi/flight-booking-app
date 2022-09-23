@@ -30,8 +30,12 @@ public class AdminMenuManager implements AdminMenu {
                     case "2" -> menuManager.menu();
                 }
             }
-        } catch (Exception exception) {
-            noticeManager.print("Try again...");
+        } catch (AdminNotFoundException
+                 | FlightBookingValueNotFoundException
+                 | StringParseException | UserNotFoundException
+                 | UserMenuValueNotFoundException |
+                 UserPasswordDoesntMatcherException exception) {
+            noticeManager.print(exception.getMessage());
             adminMenuManager.menu();
         }
     }
