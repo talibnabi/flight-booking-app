@@ -3,6 +3,7 @@ package app.admin.concretes;
 import app.admin.abstracts.AdminMenu;
 import exception.*;
 
+import static app.admin.concretes.AdminLogIn.adminLogin;
 import static util.AdminUtil.checkingAdminMenu;
 import static util.MenuUtil.*;
 
@@ -11,8 +12,6 @@ public class AdminMenuManager implements AdminMenu {
 
     public static void fillFlight() throws AdminNotFoundException, UserNotFoundException, StringParseException, UserMenuValueNotFoundException, UserPasswordDoesntMatcherException, FlightBookingValueNotFoundException {
         flightBookingMenuManager.fillFlight();
-        noticeManager.print("Flights are added.");
-        adminMenuManager.menu();
     }
 
 
@@ -24,11 +23,16 @@ public class AdminMenuManager implements AdminMenu {
     @Override
     public void menu() throws AdminNotFoundException, UserNotFoundException, StringParseException, UserMenuValueNotFoundException, UserPasswordDoesntMatcherException, FlightBookingValueNotFoundException {
         showPage();
-        while (true) {
-            switch (checkingAdminMenu()) {
-                case "1" -> fillFlight();
-                case "2" -> adminMenuManager.menu();
+        try {
+            while (true) {
+                switch (checkingAdminMenu()) {
+                    case "1" -> fillFlight();
+                    case "2" -> menuManager.menu();
+                }
             }
+        } catch (Exception exception) {
+            noticeManager.print("Try again...");
+            adminMenuManager.menu();
         }
     }
 }

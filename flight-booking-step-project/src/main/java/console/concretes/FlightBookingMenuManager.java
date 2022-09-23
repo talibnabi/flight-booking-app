@@ -12,7 +12,7 @@ import static util.RandomUtil.*;
 public final class FlightBookingMenuManager implements FlightBookingMenu {
 
     @Override
-    public void fillFlight() {
+    public void fillFlight() throws UserNotFoundException, StringParseException, UserMenuValueNotFoundException, AdminNotFoundException, UserPasswordDoesntMatcherException, FlightBookingValueNotFoundException {
         noticeManager.print("How many flight do you want to add?: ");
         int flightCount = scanner.nextInt();
         for (int i = 0; i < flightCount; i++) {
@@ -21,6 +21,8 @@ public final class FlightBookingMenuManager implements FlightBookingMenu {
             flight.setTicket(ticket);
             flightService.create(flight);
         }
+        noticeManager.print("Flights are added.");
+        adminMenuManager.menu();
     }
 
     @Override

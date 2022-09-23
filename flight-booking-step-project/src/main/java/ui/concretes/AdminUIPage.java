@@ -10,7 +10,7 @@ public class AdminUIPage implements Menu {
                 "==========================================\n" +
                 "| What do you want to do?                |\n" +
                 "| 1. --> FILL FLIGHTS RANDOMLY           |\n" +
-                "| 2. --> EXIT                            |\n" +
+                "| 2. --> LOG OUT                         |\n" +
                 "|========================================|\n";
     }
 }

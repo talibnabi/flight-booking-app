@@ -17,7 +17,7 @@ public class AdminLogIn {
             noticeManager.print("Successfully login!");
             adminMenuManager.menu();
         } else {
-            throw new AdminNotFoundException("Admin not found...");
+            throw new AdminNotFoundException("Admin not found.Try again....");
         }
         menuManager.showPage();
     }
