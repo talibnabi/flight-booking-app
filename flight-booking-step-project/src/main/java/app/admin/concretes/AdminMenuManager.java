@@ -36,7 +36,7 @@ public class AdminMenuManager implements AdminMenu {
                  | UserMenuValueNotFoundException |
                  UserPasswordDoesntMatcherException exception) {
             noticeManager.print(exception.getMessage());
-            adminMenuManager.menu();
+            menu();
         }
     }
 }

@@ -32,16 +32,26 @@ public final class FlightBookingMenuManager implements FlightBookingMenu {
 
     @Override
     public void menu() throws FlightBookingValueNotFoundException, UserNotFoundException, UserMenuValueNotFoundException, UserPasswordDoesntMatcherException, StringParseException, AdminNotFoundException {
-        while (true) {
-            showPage();
-            switch (checkingFlightBookingMenu()) {
-                case "1" -> showAllFlightInfo();
-                case "2" -> showFlightById();
-                case "3" -> bookingFlight();
-                case "4" -> getAllBookingByUserName();
-                case "5" -> cancelBooking();
-                case "6" -> menuManager.menu();
+        try {
+            while (true) {
+                showPage();
+                switch (checkingFlightBookingMenu()) {
+                    case "1" -> showAllFlightInfo();
+                    case "2" -> showFlightById();
+                    case "3" -> bookingFlight();
+                    case "4" -> getAllBookingByUserName();
+                    case "5" -> cancelBooking();
+                    case "6" -> menuManager.menu();
+                }
             }
+        } catch (AdminNotFoundException
+                 | FlightBookingValueNotFoundException
+                 | StringParseException | UserNotFoundException
+                 | UserMenuValueNotFoundException |
+                 UserPasswordDoesntMatcherException exception) {
+            noticeManager.print(exception.getMessage());
+            menu();
         }
+
     }
 }
