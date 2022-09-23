@@ -46,7 +46,7 @@ public final class FlightBookingMenuManager implements FlightBookingMenu {
             }
         } catch (AdminNotFoundException | FlightBookingValueNotFoundException|
                  UserNotFoundException | UserMenuValueNotFoundException | UserPasswordDoesntMatcherException |
-                 FlightIdNotFoundException | FlightNotFoundException  exception) {
+                 FlightIdNotFoundException | FlightNotFoundException | FlightChoiceNotFoundException  exception) {
             noticeManager.print(exception.getMessage());
             menu();
         }

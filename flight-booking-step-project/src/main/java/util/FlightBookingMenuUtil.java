@@ -12,6 +12,11 @@ import java.util.List;
 import static util.MenuUtil.*;
 
 public class FlightBookingMenuUtil {
+    private static String destination;
+    private static String freeSeats;
+    private static String date;
+    private static List<Flight> flights;
+    private static List<Flight> flightsChoice;
 
     public static String checkingFlightBookingMenu() throws FlightBookingValueNotFoundException {
         String origin;
@@ -41,26 +46,13 @@ public class FlightBookingMenuUtil {
 
     }
 
-    public static void bookingFlight() throws UserNotFoundException, StringParseException, UserMenuValueNotFoundException, UserPasswordDoesntMatcherException, FlightBookingValueNotFoundException, AdminNotFoundException, FlightIdNotFoundException, FlightNotFoundException {
-        String destination;
-        String freeSeats;
-        String date;
-        noticeManager.print("Enter destination: ");
-        destination = noticeManager.readline();
-        noticeManager.print("Enter number of people (how many tickets to buy): ");
-        freeSeats = noticeManager.readline();
-        noticeManager.print("Enter date (ex 2022-09-12)");
-        date = noticeManager.readline();
-        List<Flight> flights;
-        try {
-            flights = flightControllerManager.showFlightByFlightInfo(destination, Integer.parseInt(freeSeats), date);
-        } catch (Exception exception) {
-            throw new FlightNotFoundException("Flight not found...Try again");
-        }
+    public static void bookingFlight() throws UserNotFoundException, UserMenuValueNotFoundException, UserPasswordDoesntMatcherException, FlightBookingValueNotFoundException, AdminNotFoundException, FlightIdNotFoundException, FlightNotFoundException, FlightChoiceNotFoundException {
+        destination = getDestination();
+        freeSeats = getSeats();
+        date = getDate();
+        flights = getFlight();
         flights.forEach(System.out::println);
-        noticeManager.print("Make your choice: ");
-        String id = noticeManager.readline();
-        List<Flight> flights1 = flights.stream().filter(flightx -> flightx.getId() == Integer.parseInt(id)).toList();
+        flightsChoice = getChoiceFlight();
         List<Passenger> passengers = new ArrayList<>();
         for (int i = 0; i < Integer.parseInt(freeSeats); i++) {
             noticeManager.print("Enter passenger " + (i + 1) + " firstname: ");
@@ -70,8 +62,44 @@ public class FlightBookingMenuUtil {
             Passenger passenger = new Passenger(firstName, lastName);
             passengers.add(passenger);
         }
-        Booking booking = new Booking(flights1.get(0), user, passengers, LocalDate.now());
+        Booking booking = new Booking(flightsChoice.get(0), user, passengers, LocalDate.now());
         bookingControllerManager.createBooking(booking);
+    }
+
+    private static String getDestination() {
+        noticeManager.print("Enter destination: ");
+        return noticeManager.readline();
+    }
+
+    private static String getSeats() {
+        noticeManager.print("Enter number of people (how many tickets to buy): ");
+        return noticeManager.readline();
+    }
+
+    private static String getDate() {
+        noticeManager.print("Enter date (ex 2022-09-12)");
+        return noticeManager.readline();
+    }
+
+    private static List<Flight> getFlight() throws FlightNotFoundException {
+        try {
+            return flightControllerManager.showFlightByFlightInfo(destination, Integer.parseInt(freeSeats), date);
+        } catch (Exception exception) {
+            throw new FlightNotFoundException("Flight not found...Try again");
+        }
+    }
+
+    private static String getId() {
+        noticeManager.print("Make your choice: ");
+        return noticeManager.readline();
+    }
+
+    private static List<Flight> getChoiceFlight() throws FlightChoiceNotFoundException {
+        try {
+            return flights.stream().filter(flightx -> flightx.getId() == Integer.parseInt(getId())).toList();
+        } catch (Exception exception) {
+            throw new FlightChoiceNotFoundException("Choice not found...Try again");
+        }
     }
 
     public static void getAllBookingByUserName() {
